@@ -3,6 +3,7 @@ package tw.edu.pu.s1100393.yuci
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -13,6 +14,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -50,6 +54,16 @@ fun Greeting(name: String) {
             contentDescription = "map",
             alpha = 0.7f,
             modifier = Modifier)
+    }
+    Box(
+        modifier = Modifier.fillMaxSize()
+    ){
+        Canvas(modifier = Modifier){
+            drawRect(Color.Blue, Offset(800f, 200f), Size(25f,25f))
+        }
+        Canvas(modifier = Modifier){
+            drawRect(Color.Blue, Offset(1600f, 900f), Size(25f,25f))
+        }
     }
 }
 
